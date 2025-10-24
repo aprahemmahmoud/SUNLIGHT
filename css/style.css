@@ -8,7 +8,9 @@ body {
     font-family: "Poppins",sans-serif;
 }
 
-
+html {
+    scroll-behavior: smooth;
+}
 
 /* comp */
 
@@ -68,6 +70,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+h1, h2, h3, h4 {
+    color: var(--title-color);
+    font-family: var(--second-font);
+    font-weight: var(--font-semi-bold);
 }
 
 /* start header */
@@ -145,9 +153,9 @@ nav ul a{
     position: absolute;
     z-index: -2;
     width: 100%;
-    height: 100%;
+    height: 95%;
     background-color: rgb(8%, 8%, 8%);
-    transform: skewY(5deg);
+    transform: skewY(4deg) translateY(-8px);
 }
 
 .Home .cont {
@@ -176,7 +184,7 @@ nav ul a{
     height: 390px;
     margin: auto;
     margin: 0;
-    transform: translateY(-7px);
+    transform: translateY(-10px);
 }
 .Home :where(.image) h1 {
     font-size: 7em;
@@ -184,6 +192,7 @@ nav ul a{
     color: hsla(0, 0%, 100%, 0.3);
     font-weight: var(--font-medium);
     margin: 0;
+    font-family: var(--second-font);
 }
 
 
