@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="icon" type="img/x-icon" href="image/favicon.png"> -->
+    <link rel="icon" type="img/x-icon" href="image/favicon.png">
     <title>SUNLIGHT</title>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cairo:wght@200..1000&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jomhuria&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cairo:wght@200..1000&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jomhuria&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cairo:wght@200..1000&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Jomhuria&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- style -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/> -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body>
+<body class="">
     <header id="header">
         <nav class="cont">
             <div class="logo">
@@ -32,7 +35,7 @@
                     <li><a href="#Products">Products</a></li>
                 </ul>
             </div>
-            <div class="Mode">
+            <div class="mode">
                 <i class="fa-regular fa-moon"></i>
             </div>
         </nav>
@@ -40,12 +43,12 @@
 
     <section class="Home" id="Home">
         <div class="cont">
-            <div class="image">
+            <div class="image toup">
                 <img src="image/home-lamp.png" alt="">
                 <h1>LIGHT</h1>
                 <div class="box-shadow"></div>
             </div>
-            <div class="content">
+            <div class="content uptodown">
                 <div>
                     <h3 class="title-h3">The best light bulbs</h3>
                     <h1>Unique Light For You Home</h1>
@@ -73,15 +76,15 @@
     </section>
 
     <section class="Popular" id="Popular">
-        <div class="cont">
+        <div class="cont uptodown">
             <div class="title">
                 <h2>Popular Product</h2>
                 <p>Find our best products faster and get the quality lights we have for you.</p>
             </div>
             <div class="content">
-                <div class="product">
-                    <div class="product-list">
-                        <div class="item">
+                <div class="product swiper">
+                    <div class="product-list swiper-wrapper">
+                        <div class="item swiper-slide">
                             <div class="image">
                                 <img src="image/modern-lamp.png" alt="">
                             </div>
@@ -92,7 +95,7 @@
                                 <button><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item swiper-slide">
                             <div class="image">
                                 <img src="image/industrial-lamp.png" alt="">
                             </div>
@@ -103,7 +106,7 @@
                                 <button><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item swiper-slide">
                             <div class="image">
                                 <img src="image/superbolw-lamp.png" alt="">
                             </div>
@@ -114,7 +117,7 @@
                                 <button><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item swiper-slide">
                             <div class="image">
                                 <img src="image/ultrawide-lamp.png" alt="">
                             </div>
@@ -125,7 +128,7 @@
                                 <button><i class="fa-solid fa-plus"></i></button>
                             </div>
                         </div>
-                        <div class="item">
+                        <div class="item swiper-slide">
                             <div class="image">
                                 <img src="image/roundness-light.png" alt="">
                             </div>
@@ -137,10 +140,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="switch">
-                        <button class="to-left"><i class="fa-solid fa-chevron-left"></i></button>
-                        <button class="to-right"><i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
+                        <button class="to-left swiper-button-prev swip-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="to-right swiper-button-next swip-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                        <!--   -->
                 </div>
             </div>
         </div>
@@ -154,7 +156,7 @@
                     <h1 class="po1">LIGHT</h1>
                     <div class="box-shadow"></div>
                 </div>
-            <div class="content">
+            <div class="content ">
                 <div>
                     <h2>Why Choose Us</h2>
                     <p>Our products have won numerous awards and we can guarantee the unlimited quality of our products.</p>
@@ -196,7 +198,7 @@
     </section>
 
     <section class="Products" id="Products">
-        <div class="cont">
+        <div class="cont uptodown">
             <div class="title">
                 <h2>our product</h2>
                 <p>Discover all our Unique products that are <br> suitable for your home.</p>
@@ -304,7 +306,7 @@
     </section>
 
     <section class="joinUs">
-        <div class="cont">
+        <div class="cont uptodown">
             <div class="join-cont">
 
                 <div class="image">
@@ -330,7 +332,7 @@
     </section>
 
     <footer>
-        <div class="cont">
+        <div class="cont uptodown">
         <div class="footer-contact">
             <div>
                 <h3 class="logo">SUN<span>LIGHT</span></h3>
@@ -379,5 +381,10 @@
         </div>
         </div>
     </footer> 
+    <div class="scroll-up"><i class="fa-solid fa-arrow-up"></i></div>
+    <script src="js/main.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> -->
+
 </body>
 </html>

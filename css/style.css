@@ -8,6 +8,24 @@ body {
     font-family: "Poppins",sans-serif;
     background-color: var(--body-color);
     z-index: -1000;
+    transition: 0.3s;
+}
+
+.dark-mode {
+    --title-color: hsl(0, 0%, 95%);
+    --text-color: hsl(0, 0%, 70%);
+    --body-color: hsl(0, 0%, 12%);
+    --container-color: hsl(0, 0%, 15%);
+}
+
+.dark-mode .Choose .product-2 li {
+    background: linear-gradient(180deg, hsla(0, 0%, 12%, 0), hsla(0, 0%, 12%));
+    color: white;
+}
+
+.dark-mode .scroll-up {
+    background-color: white;
+    color: black;
 }
 
 html {
@@ -70,6 +88,9 @@ html {
     }
 }
 
+
+
+
 section {
     width: 100%;
     min-height: 100vh;
@@ -109,6 +130,65 @@ li {
 }
 
 
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes toRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes toLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.show {
+    animation: show 1s ease-in-out;
+}
+
+.toup {
+    animation: up 1s ease-in-out;
+}
+
+.toRight {
+    animation: toRight 1s ease-in-out;
+}
+.toLeft {
+    animation: toLeft 1s ease-in-out;
+}
+
 /* start header */
 header {
     height: 80px;
@@ -119,6 +199,7 @@ header {
     top: 0;
     right: 0;
     left: 0;
+    z-index: 100;
 }
 
 nav {
@@ -172,7 +253,7 @@ nav ul a{
     color: var(--text-color);
 }
 
-.Mode {
+.mode {
     color: var(--text-color);
     cursor: pointer;
 }
@@ -181,7 +262,6 @@ nav ul a{
 
 .Home {
     position: relative;
-    z-index: -1;
     padding: 0px 0px 50px 0px;
     margin-bottom: 20px;
 }
@@ -230,6 +310,7 @@ nav ul a{
     margin: 0;
     font-family: var(--second-font);
 }
+
 
 
 .Home .content {
@@ -313,7 +394,7 @@ nav ul a{
     flex-flow: column;
     padding: 112px 0px 32px ;
     background-color: inherit;
-    z-index: -2;
+    
 }
 
 .Popular .cont {
@@ -331,11 +412,10 @@ nav ul a{
 } 
 
 .Popular .product-list {
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(5,230px);
     padding-bottom: 50px;
-    row-gap: 20px;
-    width: 100vw;
+    column-gap: 30px;
 }
 
 :where(.Popular,.Products) .product-list .item {
@@ -400,6 +480,10 @@ nav ul a{
 }
 
 
+.swiper {
+    z-index: 1;
+}
+
 .Popular .switch {
     display: flex;
     justify-content: center;
@@ -407,42 +491,101 @@ nav ul a{
     gap: 30px;
 }
 
-.Popular .switch .to-left,
-.Popular .switch .to-right{
+.Popular .to-left,
+.Popular .to-right{
     border: none;
     border-radius: 50%;
     width: 32px;
     height: 32px;
-    background-color: white; 
-    box-shadow: 5px 5px 10px gray;
+    background-color: var(--container-color); 
+    box-shadow: 3px 3px 5px gray;
     cursor: pointer;
 }
 
-.Popular .switch .to-left i,
-.Popular .switch .to-right i{
-    background: var(--third-gradient);
-    background-clip: text;
-    color: transparent;
+.dark-mode .Popular .to-left,
+.dark-mode .Popular .to-right {
+    box-shadow: 3px 3px 5px var(--body-color);
 }
 
 
-.Popular .switch li {
+.swiper-horizontal {
+    .swiper-button-next, .swiper-button-prev, ~.swiper-button-next, ~.swiper-button-prev {
+        margin-left: 0;
+        margin-top: calc(0px - var(--swiper-navigation-size) / 2);
+        top: var(--swiper-navigation-top-offset, 80%);
+    }
+}
+
+.swiper-horizontal {
+    &.swiper-rtl .swiper-button-prev, &.swiper-rtl~.swiper-button-prev, &~.swiper-button-next, .swiper-button-next {
+        left: 60%;
+        right: var(--swiper-navigation-sides-offset, 4px);
+    }
+}
+
+
+.swiper-horizontal {
+    &.swiper-rtl .swiper-button-next, &.swiper-rtl~.swiper-button-next, &~.swiper-button-prev, .swiper-button-prev {
+        left: auto;
+        right: 60%;
+    }
+}
+
+
+.Popular .swiper-button-next  i,
+.Popular .swiper-button-prev i{
+    background: var(--third-gradient);
+    background-clip: text;
+    color: transparent;
+    text-align: center;
+}
+
+/* .swiper-button-next,
+.swiper-button-prev {
+    background: var(--third-gradient);
+    background-clip: text;
+    color: transparent;
+} */
+
+.swiper-button-next, 
+.swiper-button-prev {
+    /* font-size: 20px; */
+    bottom: 0px;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.swiper-button-next svg,.swiper-button-prev svg {
+        color: transparent;
+        display: none;
+    }
+
+/* 
+.Popular .switch .to-left,
+.Popular .switch .to-right{
+    background: var(--third-gradient);
+    background-clip: text;
+    color: transparent;
+} */
+
+
+/* .Popular .switch li {
     list-style: none;
     width: 10px;
     height: 10px;
     border: 2px solid black;
     border-radius: 50%;
-}
+} */
 
 /* end Popular */
 /* start Choose */
 
 .Choose .cont {
     width: 1120px;
-}
-
-.Choose {
-    z-index: -1;
 }
 
 .Choose .product {
@@ -517,6 +660,7 @@ nav ul a{
     font-size: var(--h2-font-size);
     font-weight: 500;
     cursor: pointer;
+    color: var(--title-color);
 }
 
 .Choose .product-1 span {
@@ -566,7 +710,6 @@ nav ul a{
 
 .Products {
     padding: 112px 0px 32px 0px;
-    z-index: -2;
 }
 
 
@@ -586,7 +729,7 @@ nav ul a{
 
 .Products .item {
     padding: 1rem 1rem 1.5rem;
-    background-color: white; 
+    background-color: var(--container-color); 
     border-radius: 9em 9em 0 0;
     transition: 0.3s;
 }
@@ -604,12 +747,12 @@ nav ul a{
 /* start joinUs*/
 .joinUs {
     padding: 112px 0px 32px 0px;
-    z-index: -2;
 }
 
 .joinUs .cont {
     color: rgb(255, 255, 255);
     padding-block: 9rem 5rem;
+    z-index: 2;
 }
 
 .joinUs .join-cont {
@@ -619,7 +762,7 @@ nav ul a{
     height: 442px;
     padding-inline: 6rem;
     justify-self: initial;
-    background-color: white;
+    background-color: var(--container-color);
     z-index: -3;
     justify-content: center;
     align-items: center;
@@ -740,8 +883,6 @@ footer ul a:hover {
     color: black;
 }
 
-
-
 footer .follow-icons .icons {
     display: flex;
     gap: 1.5rem;
@@ -778,3 +919,94 @@ footer .copyRight div {
 }
 
 /* ent footer */
+
+.scroll-up {
+    position: fixed;
+    right: 2rem;
+    bottom: -10%;
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    z-index: 10; 
+    transition: 0.4s;
+}
+
+.scroll-up:hover {
+    cursor: pointer;
+    transform: translateY(-8px);
+    opacity: 1;
+}
+
+
+/* media query */
+@media (min-width:768px) {
+    .cont {
+        width: 70%;
+    }
+    /* Home */
+    .Home .cont {
+        display: grid;
+        grid-template-columns: 330px 265px;
+        padding-top: 3.5em;
+        gap: 4rem;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .Home .cont .image {
+        width: 330px;
+        height: 500px;
+    }
+    .Home .cont .image h1 {
+        font-size: 3.5rem;
+    }
+    .Home .cont img {
+        width: 300px;
+        height: 336px;
+    }
+    /* end Home */
+    /* popular */
+    .Popular .product-list {
+    display: grid;
+    grid-template-columns: repeat(5,230px);
+    grid-template-rows: 410px;
+    padding-bottom: 50px;
+    column-gap: 20px;
+    }
+    /* Choose */
+    .Choose .product {
+    display: grid;
+    grid-template-columns: 400px 355px;
+    column-gap: 2rem;
+    padding: 112px 0px 32px 0px;
+    }
+    .Choose div.image {
+    width: 375px;
+    height: 410px;
+    z-index: -2;
+    position: relative;
+    }
+    .Choose .img1 {
+    width: 235px;
+    height: 381px;
+    }
+    .Choose .img2 {
+    width: 300px;
+    height: 375px;
+    }
+    .Choose .product-2 h1 {
+    font-size: 4rem;
+    }
+    /* end Choose */
+    /* Products */
+    .Products .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px));
+    gap: 3rem 2rem;
+    width: inherit;
+    }
+    /* end Products */
+
+}
