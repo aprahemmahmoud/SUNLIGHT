@@ -131,6 +131,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+//nav
 
+let Links = document.querySelector("nav .Links ul")
+let linkLi = document.querySelectorAll("nav .Links ul li")
+let hamburger = document.querySelector(".hamburger")
+let spans = document.querySelectorAll(".hamburger span")
 
+hamburger.addEventListener('click',function(e){
+  if(Links.style.visibility == "visible"){
+    Links.style.visibility = "hidden"
+    Links.style.transition = "0.5s ease-in-out"
+    linkLi.forEach((element) => {
+      element.style.display = "none"
+      element.style.opacity = "0"
+    })
+    Links.style.height = "0px"
+    spans.forEach((element) => {
+      element.style.cssText = "width: 20px; height: 2px; display: block; transform: rotate(0deg) translateX(0px); transition: 0.5s ease-in-out;"
+    })
+  }else{
+    Links.style.visibility = "visible"
+    Links.style.height = "135px"
+    linkLi.forEach((element) => {
+      element.style.display = "block"
+      element.style.opacity = "1"
+      element.style.transition = "0.5s ease-in-out"
+      element.style.transitionDelay = "0.5s"
+    })
+    spans[0].style.cssText = `width: 25px;
+        transition: 0.5s ease-in-out;
+        transform: rotate(134deg) translateX(10px);`
+        spans[1].style.width = "0px"
+        spans[2].style.cssText = `width: 25px;
+        transition: 0.5s ease-in-out;
+        transform: rotate(-134deg) translateX(10px);`
+  }
+})
 
