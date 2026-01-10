@@ -25,4 +25,3 @@ Through developing this project, the following skills were acquired and improved
 🔗 CSS-JavaScript Integration - Dynamic interaction between design and programming
 📚 Using External Libraries - Exploring diverse JavaScript libraries like Swiper
 📱 Responsive Design Development - Advanced responsive design techniques
-
